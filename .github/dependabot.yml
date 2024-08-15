@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "pip"
+      include: "scope"
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: "-"
+    versioning-strategy: auto
+    allow:
+      - dependency-name: "fonttools"
